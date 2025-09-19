@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 body {
-  font-family: Arial, sans-serif;
-  background: #f8f9fa;
+  font-family: "nunito", sans-serif;
+  background: #448538;
   margin: 0;
   padding: 0;
+  color: #fff;
 }
 
 .container {
@@ -22,26 +24,46 @@ h1 {
   gap: 20px;
 }
 
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .card {
   background: white;
+  color: #222;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-input, button {
-  width: 100%;
+.input-group{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+input{
+  flex-basis: 100%;
   padding: 10px;
   margin-top: 8px;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 6px;
+}
 
 button {
-  background: green;
-  color: white;
+  background: #00513F;
+  color: #fff;
   font-weight: bold;
   cursor: pointer;
+  border: none;
 }
 
 button:disabled {
@@ -53,19 +75,21 @@ button:disabled {
   display: flex;
   gap: 10px;
   margin-top: 10px;
+  flex-wrap: wrap; /* ✅ biar kalau sempit turun ke bawah */
 }
 
 .ticket-box {
   flex: 1;
-  border: 1px solid #ccc;
+  border: 1.5px solid #ccc;
   padding: 10px;
   text-align: center;
   border-radius: 6px;
   cursor: pointer;
+  min-width: 120px; 
 }
 
 .ticket-box.active {
-  border: 2px solid blue;
+  border: 1.5px solid green;
   background: #eef5ff;
 }
 
@@ -73,7 +97,6 @@ button:disabled {
   color: green;
   font-weight: bold;
 }
-
 .payment-options {
   display: flex;
   flex-wrap: wrap;
@@ -81,12 +104,25 @@ button:disabled {
   margin-top: 10px;
 }
 
-.payment-options button {
-  flex: 1;
+.payment-box {
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 12px 8px 12px;
+  cursor: pointer;
+  background: white;
+  text-align: center;
+  
 }
 
-.payment-options .active {
-  background: darkgreen;
+/* sembunyikan radio default */
+.payment-box input[type="radio"] {
+  accent-color: green;
+}
+
+/* saat dipilih */
+.payment-box.active {
+  border: 1.5px solid green;
+  background: #e6ffed;
 }
 
 .total {
@@ -101,14 +137,23 @@ button:disabled {
   font-style: italic;
 }
 
+
+@media (min-width: 768px) {
+  .success-box{
+    width: 450px;
+  };
+}
+
 .success-box {
-  background: #e6ffed;
-  border: 1px solid #b2f2bb;
+  margin: 0 auto;
+  background: #fff;
+  color: #222;
+  /* border: 1px solid #b2f2bb; */
   padding: 20px;
   border-radius: 8px;
 }
 
 .success-box .total {
-  color: green;
+  color: #448538;
   font-size: 1.2em;
 }

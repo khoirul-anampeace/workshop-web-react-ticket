@@ -7,7 +7,7 @@ const tickets = [
 function TicketTypeSelector({ formData, setFormData }) {
   return (
     <div>
-      <h3>🎟 Pilih Jenis Tiket</h3>
+      <h3>Pilih Jenis Tiket</h3>
       <div className="ticket-options">
         {tickets.map((ticket) => (
           <div

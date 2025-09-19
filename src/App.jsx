@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>🎫 Registrasi Pembelian Tiket Event</h1>
+      <h1>Registrasi Pembelian Tiket</h1>
 
       {!submitted ? (
         <div className="grid">
@@ -42,7 +42,7 @@ function App() {
         </div>
       ) : (
         <div className="success-box">
-          <h2>✅ Pembelian Berhasil!</h2>
+          <h2>Pembelian Berhasil!</h2>
           <div className="detail">
             <p><strong>Nama:</strong> {formData.name}</p>
             <p><strong>Email:</strong> {formData.email}</p>
@@ -52,11 +52,13 @@ function App() {
             <p><strong>Jumlah:</strong> {formData.quantity} tiket</p>
             <p><strong>Harga per Tiket:</strong> Rp {formData.ticketPrice.toLocaleString()}</p>
             <p><strong>Metode Pembayaran:</strong> {formData.payment}</p>
+            
+            <hr style={{ border: "0.5px dashed #c9c9c9ff" }} />
             <p className="total">
               Total: Rp {(formData.ticketPrice * formData.quantity).toLocaleString()}
             </p>
           </div>
-          <button onClick={resetForm}>Beli Tiket Lagi</button>
+          <button onClick={resetForm}>Beli Lagi</button>
         </div>
       )}
     </div>
